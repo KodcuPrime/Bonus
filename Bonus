@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class bonus {
+    public static int fib(int n) {
+        if (n == 0) return 0;
+        if (n == 1) return 1;
+        int[] fibArray = new int[n + 1];
+
+        fibArray[0] = 0;
+        fibArray[1] = 1;
+
+        for (int i = 2; i <= n; i++) {
+            fibArray[i] = fibArray[i - 1] + fibArray[i - 2];
+        }
+        return fibArray[n];
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a number:");
+        int n = sc.nextInt();
+        System.out.println(fib(n));
+    }
+}
+// 1 1 2 3 5 8 13 21
