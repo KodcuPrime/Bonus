@@ -1,0 +1,47 @@
+import java.util.Random;
+public class bonus{
+    public static void main(String[] args) {
+        int[][] scores = new int[5][4];
+        Random rand = new Random();
+        for (int i = 0; i < 5; i++) {
+            for (int n = 0; n < 4; n++) {
+                scores[i][n] = rand.nextInt(101);
+            }
+        }
+
+        for (int i = 0; i < 5; i++) {
+            for (int n = 0; n < 4; n++) {
+                System.out.print(scores[i][n] + " ");
+            }
+        }
+
+        for (int i = 0; i < 5; i++) {
+            int total = 0;
+            for (int n = 0; n < 4; n++) {
+                total += scores[i][n];
+            }
+            System.out.println("Student " + i + " average: " + (total / 4.0));
+        }
+        
+        for (int n = 0; n < 4; n++) {
+            double total = 0;
+            for (int i = 0; i < 5; i++) {
+                total += scores[i][n];
+            }
+            System.out.println("Quiz " + n + " average: " + (total / 5.0));
+        }
+
+        int highestScore = -1;
+
+        for (int i = 0; i < 5; i++) {
+            for (int n = 0; n < 4; n++) {
+                if (scores[i][n] > highestScore) {
+                    highestScore = scores[i][n];
+                }
+            }
+        }
+
+        System.out.println(highestScore);
+
+    }
+}
